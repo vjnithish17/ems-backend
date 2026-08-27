@@ -72,6 +72,7 @@ const adminOnly = (req, res, next) => {
 const authorizeRole=(...roles)=>{
 //                                                     Iruka ella role irunthu routes-la mention paniruka role mattum allow pannum...
      return (req,res,next)=>{
+
          if(!roles.includes(req.user.role)){
             return res.status(403).json({
                 message:"Access Denied"
@@ -82,4 +83,4 @@ const authorizeRole=(...roles)=>{
 }
 
 
-module.exports = { protect , adminOnly,authorizeRole };
+module.exports = { protect , adminOnly, authorizeRole };

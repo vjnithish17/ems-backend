@@ -58,7 +58,9 @@ const registerUser=async(req,res)=>{
 
     res.status(200).json({
           message: "Login Successful",
-          token
+          token,
+         name: user.name,
+         role: user.role
     });
 
 
