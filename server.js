@@ -19,7 +19,10 @@ connectDB();
 //                                 -------json package add panrom--------
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({
+   origin:process.env.CLIEND_URL,
+   credentials:true
+}));
 //                                  --------Routes flow start ------>
 app.use("/api/auth",authRoutes)
 app.use("/api/employees", employeeRoutes);
